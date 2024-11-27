@@ -16,10 +16,4 @@ jobs:
     - name: Check File Changes
       run: |
         echo "Checking for changes in mydata.txt"
-        
-        # Get the diff (changes) for mydata.txt
         git diff --name-only HEAD^ HEAD | grep "mydata.txt" && echo "mydata.txt has changed" || echo "No changes detected"
-        
-        # Show what was added or modified in mydata.txt
-        echo "Displaying changes in mydata.txt:"
-        git diff HEAD^ HEAD -- mydata.txt
